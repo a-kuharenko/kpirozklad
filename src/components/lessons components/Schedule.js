@@ -4,11 +4,6 @@ import Form from'./Form';
 // eslint-disable-next-line react/require-render-return
 class Schedule extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = { currentPage: 'Schedule' }
-      }
-
     gettingSchedule = async (event) => {
         event.preventDefault();
             //const group = event.target.elements.group.value;
