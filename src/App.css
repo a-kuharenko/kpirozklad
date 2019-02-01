@@ -2,4 +2,23 @@
 
 body {
   font-family: "Open Sans", serif;
+
+  background: rgba(255,255,255,0.97);
+  background: -moz-linear-gradient(-45deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 0%, rgba(245,245,245,0.92) 47%, rgba(237,237,237,0.92) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,0.97)), color-stop(0%, rgba(255,255,255,0.92)), color-stop(47%, rgba(245,245,245,0.92)), color-stop(100%, rgba(237,237,237,0.92)));
+  background: -webkit-linear-gradient(-45deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 0%, rgba(245,245,245,0.92) 47%, rgba(237,237,237,0.92) 100%);
+  background: -o-linear-gradient(-45deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 0%, rgba(245,245,245,0.92) 47%, rgba(237,237,237,0.92) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 0%, rgba(245,245,245,0.92) 47%, rgba(237,237,237,0.92) 100%);
+  background: linear-gradient(135deg, rgba(255,255,255,0.97) 0%, rgba(255,255,255,0.92) 0%, rgba(245,245,245,0.92) 47%, rgba(237,237,237,0.92) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+
+.menu{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.but{
+  width:100px;height:30px
 }
