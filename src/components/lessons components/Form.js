@@ -2,8 +2,10 @@ import React from 'react';
 
 const Form = props => (
     <form onSubmit={props.gettingSchedule}>
-        <input type='text' name='Schedule' placeholder='Расписание'/>
-        <button>Найти расписание</button>
+      <dl>
+        <dt><input type='text' name='Schedule' placeholder='Вкажіть групу'/></dt>
+        <dt><button>Знайти розклад</button></dt>
+      </dl>    
     </form>
 );
 

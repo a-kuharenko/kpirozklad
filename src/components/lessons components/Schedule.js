@@ -6,7 +6,8 @@ class Schedule extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: undefined
+      data: undefined,
+      error: undefined
     }
   }
 
@@ -18,15 +19,17 @@ class Schedule extends Component {
     const api_url = await fetch(`http://api.rozklad.org.ua/v2/groups/${group}/timetable`);
     const data = await api_url.json();
     this.setState({
-      data: data.data.weeks
+      data: data.data,
+      error: 'Вкажіть вірну назву групи'
     });
   }
       
   render(){
     return(
       <div>
-        <Form gettingSchedule={this.gettingSchedule}/>
-        <Chart weeks={this.state.data}/> 
+        <Form gettingSchedule={this.gettingSchedule} />
+        {/* <Chart weeks={this.state.data} error={this.state.error} />  */}
+        <Chart data={this.state.data} />
       </div>
     )
   };
