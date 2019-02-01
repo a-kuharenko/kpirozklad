@@ -1,20 +1,22 @@
 import React, {Component} from 'react';
-import FirstWeek from './Weeks/FirstWeek/FirstWeek';
-import SecondWeek from './Weeks/SecondWeek/SecondWeek';
 
 class Chart extends Component {
   render(props) {
-    return (
-      <div>
-        { this.props.weeks && 
-        <div>
-          <FirstWeek week={this.props.weeks[1]} />
-          <SecondWeek week={this.props.weeks[2]} />
-        </div>
-        }
-      </div>
-    );
-  };
+    let template = null;
+    if (this.props.data){
+      const weeks = this.props.data.weeks;
+      template = Object.keys(weeks).map(item => weeks[item]);
+    } else {
+      template = this.props.error
+    };
+    const templateString = JSON.stringify(template);
+
+    return(
+      <ul>
+        {templateString}
+      </ul>
+    )
+  }
 };
 
 export default Chart; 
