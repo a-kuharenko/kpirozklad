@@ -7,26 +7,27 @@ import './App.css';
 class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { currentPage: 'Schedule' }
-  }
+    this.state = { 
+      currentPage: 'Schedule'
+    };
+  };
+
   render() {
     return (
-      <div className='wrapper'>
       <div>
-        <h2 className='menu'>
-          <button className='but' onClick={() => this.setState({currentPage: 'Schedule'})}>Schedule</button>
-          <button className='but' onClick={() => this.setState({ currentPage: 'Teachers'})}>Teachers</button>
-          <button className='but' onClick={() => this.setState({ currentPage: 'Exams'})}>Exams</button>
-        </h2>
+        <div>
+          <button onClick={() => this.setState({ currentPage: 'Schedule'})}>Розклад занять</button>
+          <button onClick={() => this.setState({ currentPage: 'Exams'})}>Екзамени</button>
+          <button onClick={() => this.setState({ currentPage: 'Teachers'})}>Розклад викладачів</button>
+        </div>
         <div>
           {this.state.currentPage === 'Schedule' ? <Schedule /> : null}
-          {this.state.currentPage === 'Teachers' ? <Teachers /> : null}
           {this.state.currentPage === 'Exams' ? <Exams /> : null}
+          {this.state.currentPage === 'Teachers' ? <Teachers /> : null}
         </div>
       </div>
-      </div>
-      );
-  }
-}
+    );
+  };
+};
 
 export default App;
