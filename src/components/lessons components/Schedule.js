@@ -8,31 +8,33 @@ class Schedule extends Component {
     this.state = {
       data: undefined,
       error: undefined
-    }
-  }
+    };
+  };
 
   gettingSchedule = async (event) => {
     event.preventDefault();
 
     const group = event.target.elements.Schedule.value;
-    //const api_url = await fetch(`https://api.rozklad.hub.kpi.ua/groups.json/?search=${group}`);
     const api_url = await fetch(`http://api.rozklad.org.ua/v2/groups/${group}/timetable`);
     const data = await api_url.json();
+
     this.setState({
       data: data.data,
       error: 'Вкажіть вірну назву групи'
     });
-  }
+  };
       
   render(){
     return(
       <div>
         <Form gettingSchedule={this.gettingSchedule} />
-        {/* <Chart weeks={this.state.data} error={this.state.error} />  */}
-        <Chart data={this.state.data} />
+        <Chart 
+          data={this.state.data} 
+          error={this.state.error} 
+        />
       </div>
-    )
+    );
   };
-}
+};
 
 export default Schedule;
