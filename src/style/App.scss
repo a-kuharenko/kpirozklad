@@ -11,12 +11,18 @@ body{
 }
 
 .top-nav{
+  float: left;
   background-color: $white;
   padding-top: 8px;
+  vertical-align: middle;
   &_logo{
     list-style: none;
     padding-top: 8px;
+    padding-left: 10px;
     display: flex;
+    align-items: center;
+    margin-left: 0px;
+    float: left;
     li{
       margin-right: 1rem;
       div{
@@ -29,11 +35,14 @@ body{
     }
   }
   &_menu{
+    float: right;
     list-style: none;
+    margin-right: 10px;
     padding: 0;
     display: flex;
+    margin-top: 8px;
     li{
-      margin-right: 3rem;
+      margin-left: 3rem;
       a{
         text-transform: uppercase;
         text-decoration: none;
